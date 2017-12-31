@@ -8,6 +8,10 @@ data = urlopen(url).read()
 pat = '<div\s*class="name">(.*?)</div>'
 rst = re.compile(pat).findall(str(data.decode('utf-8')))
 
+fh = open("./save.txt", "w")
+
 it = iter(rst)
 for data in it:
-    print(data)
+    fh.writelines(str(len(data)) + "\n")
+    print(str(data))
+fh.close()
