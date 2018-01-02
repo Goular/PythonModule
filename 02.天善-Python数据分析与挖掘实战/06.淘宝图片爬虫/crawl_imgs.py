@@ -2,8 +2,11 @@ import urllib.request
 import urllib.parse
 import re
 
+# 淘宝依据"关键词"爬取相关的图片(并下载到本地)并下载
 param = "篮球"
 key = urllib.request.quote(param)
+# 该链接仅在火狐下才能抓取到图片地址，而其他浏览器是不能正确捕获到图片，可能需要抓包才能获取图片真正链接
+# 爬虫不要为了炫技，换个浏览器简单抓就不用抓包复杂抓，切记！切记！
 headers = ("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0")
 opener = urllib.request.build_opener()
 opener.addheaders = [headers]
