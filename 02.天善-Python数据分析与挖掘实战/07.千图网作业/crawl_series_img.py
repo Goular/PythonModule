@@ -1,5 +1,6 @@
 import urllib.request
 import urllib.parse
+import urllib.error
 import re
 import random
 
@@ -23,11 +24,22 @@ for i in range(1, 10):
     # 组合拼接字符串
     page = str(i)
     real_url = url + '-' + page + ".html"
+    print('抓取页面地址:' + real_url)
     # 抓取页面数据
     data = urllib.request.urlopen(real_url).read().decode('utf-8', 'ignore')
     # 正则表达式
     rsts = re.compile(pat).findall(data)
+    if len(rsts):
+        print('抓取第' + str(i) + '页数据成功')
     results = iter(rsts)
-    for data in results:
-        ran = random.random()
-        urllib.request.urlretrieve(data, './img/' + str(ran) + str(i)+".jpg")
+    for index, data in enumerate(results):
+        try:
+            urllib.request.urlretrieve(data, './img/' + str(i) + '-' + str(index) + ".jpg")
+            print('当前打印的是第' + str(i) + '页第' + str(index + 1) + '张图片')
+        except urllib.error.URLError as err:
+            if hasattr(err, 'code'):
+                print(err.code, end='')
+            if hasattr(err, 'reason'):
+                print(err.reason)
+        except Exception as err:
+            print(err)
