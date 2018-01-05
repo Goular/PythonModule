@@ -9,5 +9,8 @@
 class FirstPipeline(object):
     def process_item(self, item, spider):
         # item必须是item.py文件所定义的
-        print(item['content'])
+        # print(item['content'])
+        for i in range(0, len(item['content'])):
+            print(item['content'][i])
+            print(item['link'][i])
         return item
