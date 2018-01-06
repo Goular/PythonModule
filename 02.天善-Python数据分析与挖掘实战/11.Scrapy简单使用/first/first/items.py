@@ -16,5 +16,5 @@ class FirstItem(scrapy.Item):
 
     # 创建了容器不一定要用，但是要用爬虫容器就需要定义Field
     content = scrapy.Field()
-    logo = scrapy.Field()
-    qiushibaike = scrapy.Field()
+    link = scrapy.Field()
+    qsbk = scrapy.Field()
