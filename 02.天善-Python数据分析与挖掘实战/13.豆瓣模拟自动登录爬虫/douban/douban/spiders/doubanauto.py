@@ -13,15 +13,17 @@ class DoubanautoSpider(scrapy.Spider):
     # start_urls = ['http://douban.com/']
 
     def start_requests(self):
-        return [Request('https://accounts.douban.com/login', callback=self.parse, meta={'cookiejar': 1})]
+        return [Request('https://accounts.douban.com/login', headers=self.header, callback=self.parse,
+                        meta={'cookiejar': 1})]
 
     def parse(self, response):
         captcha = response.xpath("//img[@id='captcha_image']/@src").extract()
         url = 'https://accounts.douban.com/login'
         if len(captcha) > 0:
             print('此时验证码')
-            localpath = '../captcha.png'
-            urllib.request.urlretrieve(url, localpath)
+            print(url)
+            localpath = './captcha.png'
+            urllib.request.urlretrieve(captcha[0], localpath)
             print('请查看本地图片验证码并输入验证码')
             captcha_value = input()
             data = {
