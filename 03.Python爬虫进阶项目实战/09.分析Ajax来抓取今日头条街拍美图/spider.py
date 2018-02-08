@@ -4,6 +4,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 import re
+from config import *
+
 
 
 def get_page_index(offset, keyword):
