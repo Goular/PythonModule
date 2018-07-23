@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="-1"/>
+  <meta name="viewport" content="minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>登录豆瓣</title>
+  
+  <link rel="stylesheet" href="https://img3.doubanio.com/f/accounts/b240ddd8a3567fbdf92a878ac5876b7ae0531db9/css/shire/mobile_accounts.css" />
+  
+    <script type="text/javascript" src="https://img3.doubanio.com/f/accounts/bbd909b4dd82f6e1c664380ff01325ec129436a1/js/lib/do.js" data-cfg-corelib="https://img3.doubanio.com/f/accounts/c5268df4c1f0bada95cb3d2b80089a50b494b5ee/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="https://img3.doubanio.com/f/accounts/31b656cbd899efcb532970f2bc08d2dda563d530/js/lib/zepto.js"></script>
+    <script type="text/javascript" src="https://img3.doubanio.com/f/accounts/73890494cc4f5c432b8a6d139c3d8a68fa900a69/js/shire/mobile.js"></script>
+    <script>
+    window.err = "0"
+    Do.add('dialog-css', {path: 'https://img3.doubanio.com/f/accounts/cb933ec16efcfefc9a8345edc282bf3131bfe376/css/ui/mobile.dialog.css', type: 'css'});
+    Do.add('dialog', {path: 'https://img3.doubanio.com/f/accounts/0d89968f657dd00590944957e19a943e13ecb266/js/ui/dialog.js', type: 'js', requires: ['dialog-css']});
+    Do(function(){
+        var $btn = $('input.btn-submit');
+        $btn.on('click', function() {
+        $(this).val('正在登录···');
+        });
+    });
+    </script>
+
+  <!-- COLLECTED CSS -->
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <span class="title">豆瓣</span>
+    </div>
+    
+<h1><a href="javascript:history.go(-1);">取消</a>登录豆瓣</h1>
+<div class="mobile-accounts">
+    
+    <form method="post" action="https://accounts.douban.com/login">
+
+        <div class="form-element form-element-first">
+          <label>
+            <strong>帐号</strong>
+            <input type="text" name="form_email" placeholder="邮箱 / 手机号 / 用户名" value=""/>
+          </label>
+        </div>
+
+        <div class="form-element form-pwd">
+          <label>
+            <strong>请输入密码</strong>
+            <input type="password" name="form_password" id="form_password" placeholder="密码" />
+            <span class="openpwd"></span>
+          </label>
+        </div>
+
+        <div class="form-element form-element-end">
+          <label>
+            <strong>验证码</strong>
+            
+
+
+
+<img id="captcha_image" src="https://www.douban.com/misc/captcha?id=dbgjGxq5yUSXHxfO4GXR08Vr:en&amp;size=m" alt="captcha" class="captcha_image"/>
+<div class="captcha_block">
+  <span id="captcha_block"  class="pl">请输入上图中的单词</span>
+  <input type="text" id="captcha_field" name="captcha-solution"  placeholder="验证码" />
+  <input type="hidden" name="captcha-id" value="dbgjGxq5yUSXHxfO4GXR08Vr:en"/>
+</div>
+
+
+
+          </label>
+        </div>
+
+        <div class="form-element hide">
+          <input id="remember" type="checkbox" name="remember" checked/>
+          <label for="remember">下次自动登录</label>
+        </div>
+
+        <div class="form-element submit-button">
+          <input type="hidden" name="source" value="None"/>
+          <input type="hidden" name="redir" value="https://www.douban.com" />
+          <input class="btn-submit" type="submit" value="登录" />
+          <p class="hide">在第三方应用的内置浏览器中登录豆瓣帐号，可能会泄露你的帐户信息。请谨慎登录！</p>
+        </div>
+    </form>
+  
+
+
+
+<div class="item item-3rd">
+    <div class="more-login-btn">使用其他方式登录 &amp; 找回密码</div>
+
+    <div class="btn-wrapper">
+      <a class="btn reg-btn" href="https://accounts.douban.com/register?redir=https%3A//m.douban.com/">
+        注册豆瓣帐号
+      </a>
+      <a class="btn open-app">下载豆瓣App</a>
+    </div>
+      <script type="text/template" id="more-login-tpl">
+          <a target="_top"  href="https://www.douban.com/accounts/connect/sina_weibo/?from=None&amp;redir=http%3A//www.douban.com&amp;fallback=" class="item">用微博登录</a>
+          <a target="_top"  href="https://www.douban.com/accounts/weixin" class="item">用微信登录</a>
+
+          <a href="?redir=http%3A//www.douban.com&amp;login_type=sms&amp;source=None" class="item">用手机验证码登录</a>
+          <a href="https://accounts.douban.com/resetpassword" class="item">找回密码</a>
+      </script>
+    
+</div>
+
+</div>
+
+    <div class="footer">
+      
+      &copy; 2018 douban.com
+    </div>
+  </div>
+  <script type="text/javascript" src="https://img3.doubanio.com/misc/mixed_static/696dd14198168d4b.js"></script>
+</body>
+</html>
+
+
+
+
