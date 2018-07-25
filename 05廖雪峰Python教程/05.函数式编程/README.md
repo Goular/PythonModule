@@ -27,3 +27,20 @@
         (Python没有截取的函数，使用切片就可以解决问题)
         在很多编程语言中，针对字符串提供了很多各种截取函数（例如，substring），其实目的就是对字符串切片。Python没有针对字符串的截取函数，只需要切片一个操作就可以完成，非常简单
 </pre>
+
+<pre>
+    迭代
+        Python的for循环抽象程度要高于C的for循环，因为Python的for循环不仅可以用在list或tuple上，还可以作用在其他可迭代对象上。
+        list这种数据类型虽然有下标，但很多其他数据类型是没有下标的，但是，只要是可迭代对象，无论有无下标，都可以迭代，比如dict就可以迭代
+    
+    for .... in...
+        可以使用到list,dict,string上，但是需要注意，map的顺序是不能确定的
+        
+        dict的迭代
+            key迭代: for value in d.values()
+            value迭代: for k, v in d.items()
+            
+    enumerate
+        Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身
+                
+</pre>
